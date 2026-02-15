@@ -1,4 +1,8 @@
 # pip install rich
+<<<<<<< HEAD
+=======
+import subprocess
+>>>>>>> 827ccd9 (Make the shell actually functional)
 from time import sleep
 from rich.console import Console
 from rich.live import Live
@@ -122,6 +126,7 @@ def main():
     import pyfiglet
 
     theme_char=random.randrange(1,5)
+<<<<<<< HEAD
     if theme_char == 1:
         console.print(pyfiglet.figlet_format('\\o_o/', font='starwars'))
     elif theme_char == 2:
@@ -134,6 +139,19 @@ def main():
 
     elif theme_char == 5:
         console.print(pyfiglet.figlet_format('\\x_x/', font='starwars'))
+=======
+    match theme_char:
+        case 1:
+            console.print(pyfiglet.figlet_format('\\o_o/', font='starwars'))
+        case 2:
+            console.print(pyfiglet.figlet_format('\\o-o/', font='starwars'))
+        case 3:
+            console.print(pyfiglet.figlet_format('\\^_^/', font='starwars'))
+        case 4:
+            console.print(pyfiglet.figlet_format('\\-_-/', font='starwars'))
+        case 5:
+            console.print(pyfiglet.figlet_format('\\x_x/', font='starwars'))
+>>>>>>> 827ccd9 (Make the shell actually functional)
     try:
         lexer = PersistentColorWordLexer(words)
     except:
@@ -149,6 +167,7 @@ def main():
         console.print(f'[blue]│ {username} [yellow]   [/yellow]Workspace')
         import time
         text = session.prompt(f"│   {time.strftime('%H:%M', time.localtime())}  ", lexer=lexer)
+<<<<<<< HEAD
 
         #----------------------| Converter System |-------------------------#
         textinp = "".join(text.split()).lower()
@@ -160,3 +179,12 @@ def main():
             exit=True
 if __name__ == "__main__":
     main()
+=======
+        # Parse the command
+        text = text.split()
+        subprocess.run(text)
+        if text == 'exit':
+            exit=True
+if __name__ == "__main__":
+    main()
+>>>>>>> 827ccd9 (Make the shell actually functional)
