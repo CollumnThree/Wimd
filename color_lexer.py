@@ -1,3 +1,8 @@
+from prompt_toolkit.lexers import Lexer
+import re
+import colors_local as colors
+
+
 class PersistentColorWordLexer(Lexer):
     def __init__(self, words):
         self.words = words
